@@ -1,18 +1,42 @@
-import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+
 public class Calculadora {
-    public static void main (String[] args) {
-        //entrada
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("digite o primeiro numero: ");
-        double numero1 = scanner.nextDouble();
-        System.out.print("digite o segundo numero: ");
-        double numero2 = scanner.nextDouble();
-        scanner.close();
-        //processamento
-        double resultado = numero1 + numero2;
-        //saída
-        System.out.println("soma = " + resultado);
-        System.out.println("soma = " + (numero1 + numero2));
-        
-    }
+   static int soma (int a, int b) {
+      return a + b;
+   }
+   //sobrecarga de método
+   static int soma (int a, int b, int c, int d) {
+      return a + b + c + d;
+   }
+   static int soma (int a, int b, int c) {
+      return a + b + c;
+   }
+   static double soma (double a, double b) {
+      return a + b;
+   }
+   static int soma (String a, String b) {
+      return Integer.parseInt(a) + Integer.parseInt (b);
+   }
+   static int multiplica (int a, int b) {
+      return a * b;
+   }
+
+   public static void main(String[] args) {
+      System.out.println(soma(2, 3));
+      System.out.println(multiplica(14, 78));
+      int a = 10, b = 20, c = 30;
+      System.out.println(soma(a-b, c*a));
+      System.out.println(soma(10, 20 , 30));
+      System.out.println(soma(10, 20 , 30, 40));
+      String num1 = JOptionPane.showInputDialog("digite um numero");
+      String num2 = JOptionPane.showInputDialog("digite outro numero");
+      
+      System.out.println (soma(num1, num2));
+
+      System.out.println(soma ("1", "2"));
+      
+
+   }
+   
 }
